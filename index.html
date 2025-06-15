@@ -246,7 +246,6 @@
 
     <!-- Main Card -->
     <div class="card">
-
         <div class="photo-container">
             <img src="chris.jpg" alt="Father's Photo" id="father-photo">
         </div>
@@ -261,8 +260,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sprayBtn = document.getElementById('spray-btn');
+            // ONLY CHANGED PART: Replaced text with emoji flowers
             const flowers = [
-                'Baba', 'Champion!', 'Happy', 'Fathers', 'Day!', 'Be', 'Blessed!'
+                'Baba', '🌹','Champion', '🌸', '🌺', '🌻', '🌼', '🌷', '💐', '🏵️', 'Champion'
             ];
             
             // Flower spray effect
@@ -278,43 +278,6 @@
                 }, 200);
             });
             
-            function createFlower() {
-                const flower = document.createElement('div');
-                flower.classList.add('flower');
-                
-                // Random flower emoji
-                const randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
-                flower.innerHTML = randomFlower;
-                flower.style.fontSize = `${Math.random() * 20 + 10}px`;
-                
-                // Random position at the top of the screen
-                const startX = Math.random() * window.innerWidth;
-                const startY = -50;
-                
-                // Random end position
-                const endX = (Math.random() - 0.5) * 300;
-                const endY = window.innerHeight + 50;
-                
-                flower.style.left = `${startX}px`;
-                flower.style.top = `${startY}px`;
-                
-                // Set CSS variables for animation
-                flower.style.setProperty('--randomX', `${endX}px`);
-                flower.style.setProperty('--randomY', `${endY}px`);
-                
-                // Random animation duration
-                const duration = Math.random() * 3 + 2;
-                flower.style.animationDuration = `${duration}s`;
-                
-                document.body.appendChild(flower);
-                
-                // Remove flower after animation completes
-                setTimeout(() => {
-                    flower.remove();
-                }, duration * 1000);
-            }
-            
-            // Typo fix in function name
             function createFlower() {
                 const flower = document.createElement('div');
                 flower.classList.add('flower');
